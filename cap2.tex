@@ -1,0 +1,55 @@
+Prodef es una herramienta desarrollada inicialmente por Andrés Calimero en su TFG. Los repositorios de Prodef están alojados actualmente en la organzación \emph{PAL-ULL} pero se quiere tenerlos también en una organización de GitHub llamada \emph{ULL-prodef}. En este primer apartado se tratará de cumplir tres principales objetivos:
+
+\begin{itemize}
+    \item Familiarizarse con Prodef.
+    \item Aprender y listar las herramientas necesarias para trabajar en Prodef.
+    \item Migrar los repositorios de Prodef a la nueva organización: \textbf{ULL-prodef}
+\end{itemize}
+
+Para migrar a la nueva organización se han tenido que adquirir conocimientos sobre GitHub Actions y \href{https://github.com/semantic-release/semantic-release}{semantic release} principalmente
+
+\bigskip
+Con el objetivo de facilitar el trabajo a futuros colaboradores, se han creado dos ficheros:
+\begin{itemize}
+    \item \href{https://github.com/ULL-prodef/prodef/blob/master/INSTALLATION-GUIDE.md}{ProdefInstallationGuide}: Describe los pasos a seguir para instalar Prodef y ejecutar el problema de la mochila
+    \item DeveloperToolsList: Lista y explica brevemente las herramientas que se utilizan para el desarrollo de Prodef, además de indicar enlaces para buscar más información
+\end{itemize}
+\textbf{TODO:} Poner enlaces a los ficheros o poner la información visible de alguna manera
+
+\section{Instalar Prodef y ejecutar un ejemplo}
+La primera toma de contacto ha sido instalar prodef y ejecutar el problema de la mochila utilizando únicamente la línea de comandos. Para ello se ha tenido que:
+\begin{enumerate}
+  \item Clonar el meta repositorio de Prodef: \url{https://github.com/ULL-prodef/prodef.git}
+  \item Instalar el meta repositorio y, utilizando meta y los scripts presentes en el package.json, instalar, compilar, y enlazar los subrepositorios haciendo uso de meta (Para ello se debe descargar java, y crear ficheros \textbf{.npmrc} en la raíz de cada repositorio con un token personal de github adecuado).
+  \item Poner en marcha un servidor ejecutando la tarea \textbf{npm start} del repositorio \textbf{prodef-solver-jmetal}
+  \item Utilizando la herramienta \href{https://curl.se/}{curl} para ejecutar el \href{https://github.com/PAL-ULL/tfg-andres-calimero-prodef-common/blob/master/src/examples/problems/knapsack.json}{problema de la mochila} utilizando una petición http POST. Para obtener el resultado posteriormente realizamos una petición GET
+  
+\end{enumerate}
+\begin{figure}[htb]
+   \centering
+   \includegraphics[width=0.5\linewidth]{images/by-nd_88x31}
+   \caption{Otra figura}
+   \label{fig:intro}
+\end{figure}
+
+\section{Listado de herramientas y tecnologías}
+Se ha realizado un listado de herramientas utilizadas para el desarrollo y uso de Prodef.
+\begin{itemize}
+    \item Herramientas para trabajar con Prodef
+    \begin{itemize}
+        \item \href{https://github.com/mateodelnorte/meta}{meta}
+        \item \href{https://www.npmjs.com/package/rollup-plugin-typescript2}{rollup}
+        \item \href{https://www.npmjs.com/package/koa}{koa}
+        \item \href{https://juanda.gitbooks.io/webapps/content/api/arquitectura-api-rest.html}{API REST}
+        \item \href{https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557}{npm link}
+        \item \href{https://www.npmjs.com/package/antlr4ts}{antlr4ts}
+    \end{itemize}
+    \item Herramientas de estilo
+    \begin{itemize}
+        \item \href{https://github.com/commitizen/cz-cli}{commitizen}
+        \item \href{https://www.npmjs.com/package/@commitlint/cli}{commitlint}
+        \item \href{https://www.npmjs.com/package/semantic-release}{semantic-release}
+    \end{itemize}
+\end{itemize}
+
+\textbf{TODO:} Faltan bastantes herramientas por añadir, las iré introduciendo a medida que la investigue.
